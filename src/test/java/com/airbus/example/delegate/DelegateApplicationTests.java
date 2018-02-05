@@ -18,6 +18,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.airbus.example.delegate.domain.Car;
 import com.airbus.example.delegate.repo.CarRepository;
+import com.airbus.example.delegate.repo.GenericRepository;
 import com.airbus.example.delegate.service.CarService;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -27,7 +28,7 @@ public class DelegateApplicationTests {
 	private CarService service = new CarService();
 
 	@Mock
-	private CarRepository repo;
+	private GenericRepository<Car, Long> carRepo;
 
 	@Before
 	public void setup() {
@@ -39,7 +40,7 @@ public class DelegateApplicationTests {
 		porsche911.setModel("911");
 		porsches.add(porsche911);
 
-		Mockito.when(repo.findAll()).thenReturn(porsches);
+		Mockito.when(carRepo.findAll()).thenReturn(porsches);
 	}
 
 	@Test

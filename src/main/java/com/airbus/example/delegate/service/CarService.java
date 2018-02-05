@@ -25,27 +25,30 @@ public class CarService {
     //private CarRepository repo;
 
     @Autowired
-    private GenericRepository repo;
+    private GenericRepository<Car, Long> carRepo;
+
+    @Autowired
+    private GenericRepository<Truck, Long> truckRepo;
 
     public List<Car> getCars() {
 
 
-        List<Car> cars = repo.findAll();
+        List<Car> cars = carRepo.findAll();
         return cars;
 
     }
 
     public void save(Car car) {
 
-        repo.save(car);
-        repo.flush();
+        carRepo.save(car);
+        carRepo.flush();
 
     }
 
     public List<Truck> getTrucks() {
 
 
-        List<Truck> trucks = repo.findAll();
+        List<Truck> trucks = truckRepo.findAll();
         return trucks;
 
     }
