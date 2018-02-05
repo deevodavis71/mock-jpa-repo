@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.airbus.example.delegate.domain.Car;
+import com.airbus.example.delegate.domain.Truck;
 import com.airbus.example.delegate.repo.CarRepository;
 import com.airbus.example.delegate.repo.GenericRepository;
 
@@ -38,6 +39,14 @@ public class CarService {
 
         repo.save(car);
         repo.flush();
+
+    }
+
+    public List<Truck> getTrucks() {
+
+
+        List<Truck> trucks = repo.findAll();
+        return trucks;
 
     }
 }
