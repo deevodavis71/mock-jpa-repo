@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.airbus.example.delegate.domain.Car;
 import com.airbus.example.delegate.repo.CarRepository;
+import com.airbus.example.delegate.repo.GenericRepository;
 
 /**
  * User: stevedavis
@@ -19,8 +20,11 @@ import com.airbus.example.delegate.repo.CarRepository;
 @Service
 public class CarService {
 
+    //@Autowired
+    //private CarRepository repo;
+
     @Autowired
-    private CarRepository repo;
+    private GenericRepository repo;
 
     public List<Car> getCars() {
 
