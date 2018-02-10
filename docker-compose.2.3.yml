@@ -1,0 +1,7 @@
+version: '2.3'
+services:
+  delegate:
+    image: delegate:latest
+    ports:
+     - "8080:8080"
+    mem_limit: 500M

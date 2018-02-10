@@ -31,6 +31,15 @@ public class CarController {
         car.setModel("M4");
         service.save(car);
 
+        Car car2 = new Car();
+        car2.setMake("BMW");
+        car2.setModel("M5");
+        service.save(car2);
+
+        Car car3 = new Car();
+        car3.setMake("BMW");
+        car3.setModel("M6");
+        service.save(car3);
     }
 
     @GetMapping("/cars")
